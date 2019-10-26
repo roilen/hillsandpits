@@ -36,10 +36,10 @@ public class LandscapeServiceImpl implements LandscapeService {
         int[] landscape = landscapeDto.getLandscapeHeights();
         for(int i = 0; i < landscape.length; i++){
             if(landscape[i] > AppConstants.MAX_LANDSCAPE_HEIGHT){
-                System.out.println(ExceptionStrings.LANDSCAPE_HAS_HEIGHT_OVER_MAXIMUM);
+                System.out.println(ExceptionStrings.LANDSCAPE_HAS_HEIGHT_OVER_MAXIMUM + i + ": " + landscape[i]);
                 return false;
-            } else if (landscape[i] < AppConstants.MAX_LANDSCAPE_HEIGHT){
-                System.out.println(ExceptionStrings.LANDSCAPE_HAS_HEIGHT_LOWER_MINIMUM);
+            } else if (landscape[i] < AppConstants.MIN_LANDSCAPE_HEIGHT){
+                System.out.println(ExceptionStrings.LANDSCAPE_HAS_HEIGHT_LOWER_MINIMUM + i + ": " + landscape[i]);
                 return false;
             }
         }
